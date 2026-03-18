@@ -11,7 +11,7 @@ export default function ProjectsSection() {
             title: "Portfolio", 
             desc: "Main personal portfolio showcasing full-stack capabilities.", 
             link: "https://portfolio.abdullahtahir.me/",
-            img: "http://googleusercontent.com/image_collection/image_retrieval/12784416826027098198_0" 
+            img: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2000&auto=format&fit=crop" 
         },
         { 
             title: "Learn Platform", 
@@ -29,7 +29,7 @@ export default function ProjectsSection() {
             title: "ACR System", 
             desc: "Advanced reporting and management tool.", 
             link: "https://acr.abdullahtahir.me/",
-            img: "http://googleusercontent.com/image_collection/image_retrieval/12818289728473755816_0" 
+            img: "https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=2070&auto=format&fit=crop" 
         },
         { 
             title: "SMZ Enterprises", 
@@ -41,7 +41,7 @@ export default function ProjectsSection() {
             title: "InkByHand", 
             desc: "Artistic stationery e-commerce platform.", 
             link: "https://inkbyhand.store/",
-            img: "http://googleusercontent.com/image_collection/image_retrieval/11276686906117247435_0" 
+            img: "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=2070&auto=format&fit=crop" 
         },
         { 
             title: "JaveHandmade Store", 
@@ -53,7 +53,7 @@ export default function ProjectsSection() {
             title: "SocialControl", 
             desc: "Unified social media command center.", 
             link: "https://socialcontrol.abdullahtahir.me/",
-            img: "http://googleusercontent.com/image_collection/image_retrieval/4017746997089476702_0" 
+            img: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1974&auto=format&fit=crop" 
         },
         { 
             title: "GitHub Profile", 
@@ -74,21 +74,23 @@ export default function ProjectsSection() {
     return (
         <Section title="Projects">
             <div style={{ position: "relative", width: "100%" }}>
+                {/* Custom Nav Buttons */}
                 <div style={{ display: "flex", justifyContent: "flex-end", gap: "10px", marginBottom: "15px" }}>
                     <button 
                         onClick={() => scroll("left")}
-                        style={{ padding: "8px", border: "1px solid #e5e7eb", background: "#fff", cursor: "pointer" }}
+                        style={{ padding: "8px", border: "1px solid #e5e7eb", background: "#fff", cursor: "pointer", display: "flex", alignItems: "center" }}
                     >
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2"><path d="M15 18l-6-6 6-6" /></svg>
                     </button>
                     <button 
                         onClick={() => scroll("right")}
-                        style={{ padding: "8px", border: "1px solid #e5e7eb", background: "#fff", cursor: "pointer" }}
+                        style={{ padding: "8px", border: "1px solid #e5e7eb", background: "#fff", cursor: "pointer", display: "flex", alignItems: "center" }}
                     >
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2"><path d="M9 18l6-6-6-6" /></svg>
                     </button>
                 </div>
 
+                {/* Carousel Wrapper */}
                 <div 
                     ref={scrollRef}
                     style={{
