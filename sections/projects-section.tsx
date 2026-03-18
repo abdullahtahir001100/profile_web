@@ -1,60 +1,84 @@
 import Section from "@/components/section";
-import Image from "next/image";
 
 export default function ProjectsSection() {
     const projects = [
         {
-            title: "SMZ Enterprises",
-            description: "A comprehensive enterprise-level business solution.",
-            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop", 
-            link: "https://vikingarmoryblades.com/" 
+            title: "Portfolio",
+            description: "Main personal portfolio showcasing full-stack capabilities.",
+            link: "https://portfolio.abdullahtahir.me/",
         },
         {
-            title: "JaveHandmade Store",
-            description: "A premium e-commerce platform for handcrafted goods.",
-            image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2000&auto=format&fit=crop",
-            link: "https://www.javehandmade.store/"
+            title: "Learn Platform",
+            description: "Educational resource for web development and tech.",
+            link: "https://learn.abdullahtahir.me/",
+        },
+        {
+            title: "Build Hub",
+            description: "Project staging and development showcase.",
+            link: "https://build.abdullahtahir.me/",
+        },
+        {
+            title: "ACR System",
+            description: "Advanced reporting and management tool.",
+            link: "https://acr.abdullahtahir.me/",
+        },
+        {
+            title: "SMZ Enterprises",
+            description: "Enterprise-level business solution and dashboard.",
+            link: "https://smzenterprises.abdullahtahir.me/",
         },
         {
             title: "InkByHand",
-            description: "Custom e-commerce experience for artistic stationery.",
-            image: "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=2070&auto=format&fit=crop",
-            link: "https://inkbyhand.store/"
+            description: "Artistic stationery e-commerce platform.",
+            link: "https://inkbyhand.store/",
         },
-       
         {
-            title: "Hotel Management System",
-            description: "Full-stack booking and administrative dashboard.",
-            image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop",
-            link: "#"
+            title: "JaveHandmade Store",
+            description: "Premium handcrafted goods marketplace.",
+            link: "https://www.javehandmade.store/",
+        },
+        {
+            title: "SocialControl",
+            description: "Unified social media command center.",
+            link: "https://socialcontrol.abdullahtahir.me/",
+        },
+        {
+            title: "GitHub Profile",
+            description: "Open source contributions and repositories.",
+            link: "https://github.com/abdullahtahir001100",
         },
     ];
 
     return (
         <Section title="Projects">
-            <div className="flex flex-wrap justify-center items-center gap-4 mr-auto">
+            {/* Carousel Container */}
+            <div className="flex overflow-x-auto gap-4 pb-4 no-scrollbar scroll-smooth">
                 {projects.map((project) => (
-                    <a 
-                        key={project.title} 
-                        href={project.link} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="hover:-translate-y-0.5 transition duration-300 max-w-75 border border-gray-200 rounded-xl block"
+                    <a
+                        key={project.title}
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="min-w-[300px] border border-gray-300 bg-white transition-colors hover:bg-gray-50 flex flex-col"
                     >
-                        <Image
-                            className="rounded-t-xl h-42 object-fit"
-                            src={project.image}
-                            alt={project.title}
-                            width={300}
-                            height={170}
-                        />
+                        {/* Placeholder SVG - Sharp Edges */}
+                        <div className="bg-gray-100 h-40 flex items-center justify-center border-b border-gray-300">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="square" strokeLinejoin="miter" className="text-gray-400">
+                                <rect x="3" y="3" width="18" height="18" />
+                                <path d="M3 9h18M9 21V9" />
+                            </svg>
+                        </div>
+                        
                         <div className="p-4">
-                            <h3 className="text-base font-medium">
+                            <h3 className="text-base font-bold uppercase tracking-tight">
                                 {project.title}
                             </h3>
-                            <p className="text-gray-500 mt-1">
+                            <p className="text-sm text-gray-600 mt-2 leading-relaxed">
                                 {project.description}
                             </p>
+                            <div className="mt-4 text-xs font-semibold text-blue-600 uppercase">
+                                View Project &rarr;
+                            </div>
                         </div>
                     </a>
                 ))}
