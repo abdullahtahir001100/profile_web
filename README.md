@@ -1,47 +1,47 @@
-## 🚀 Portfolio Project  
+## Portfolio Project  
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=nextdotjs" />
-  <img src="https://img.shields.io/badge/TailwindCSS-UI-38B2AC?style=flat-square&logo=tailwindcss" />
-  <img src="https://img.shields.io/badge/Clarity-Analytics-blue?style=flat-square&logo=microsoft" />
-  <img src="https://img.shields.io/badge/Lenis-SmoothScroll-purple?style=flat-square" />
-  <img src="https://img.shields.io/badge/Vercel-Deployment-black?style=flat-square&logo=vercel" />
+  <img src="https://img.shields.io/badge/Next.js-16-000?style=for-the-badge&logo=nextdotjs" />
+  <img src="https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white" />
+  <img src="https://img.shields.io/badge/Microsoft_Clarity-0078D4?style=for-the-badge&logo=microsoft&logoColor=white" />
+  <img src="https://img.shields.io/badge/Lenis-Smooth_Scroll-111?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Vercel-Deployment-000?style=for-the-badge&logo=vercel" />
 </p>
 
 <p align="center">
-  ⚡ High-performance • SEO-optimized • Cinematic UX Portfolio
+  High-performance • SEO-optimized • Cinematic UX Portfolio
 </p>
 
 ---
 
-## 🛠 Architecture  
+## Tech Architecture  
 
-- **Framework:** Next.js (App Router + Server Components)  
-- **Styling:** Tailwind CSS  
-- **Scroll Engine:** Lenis  
-- **Analytics:** Microsoft Clarity  
-- **Icons:** Lucide React  
-- **Security:** HSTS  
-- **Deployment:** Vercel  
-
----
-
-## ⚡ Performance  
-
-- 🚀 Optimized Core Web Vitals (LCP, CLS)  
-- ⚡ Priority Hints for faster loading  
-- 🔄 SSG + SSR hybrid rendering  
-- 📱 Fully responsive (mobile-first)  
-- 🎬 Smooth cinematic scrolling  
+- Next.js (App Router, Server Components)  
+- Tailwind CSS (Utility-first UI)  
+- Lenis (Smooth scrolling engine)  
+- Microsoft Clarity (Analytics & heatmaps)  
+- Lucide React (Icons system)  
+- HSTS (Security headers)  
+- Vercel (Deployment & CI/CD)  
 
 ---
 
-## 📂 Structure  
+## Performance  
+
+- Core Web Vitals optimized  
+- Priority Hints (LCP boost)  
+- Hybrid rendering (SSG + SSR)  
+- Mobile-first responsive design  
+- Smooth motion experience  
+
+---
+
+## Project Structure  
 
 ```bash
-app/          # Core pages (Next.js App Router)
-components/   # Reusable UI
-hooks/        # Custom logic
-public/       # Assets
-styles/       # Global styles
+app/
+components/
+hooks/
+public/
+styles/
 next.config.js
