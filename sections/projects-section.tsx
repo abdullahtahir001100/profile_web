@@ -1,87 +1,146 @@
+"use client";
+
+import React, { useRef } from "react";
 import Section from "@/components/section";
 
 export default function ProjectsSection() {
+    const scrollRef = useRef<HTMLDivElement>(null);
+
     const projects = [
-        {
-            title: "Portfolio",
-            description: "Main personal portfolio showcasing full-stack capabilities.",
+        { 
+            title: "Portfolio", 
+            desc: "Main personal portfolio showcasing full-stack capabilities.", 
             link: "https://portfolio.abdullahtahir.me/",
+            img: "http://googleusercontent.com/image_collection/image_retrieval/12784416826027098198_0" 
         },
-        {
-            title: "Learn Platform",
-            description: "Educational resource for web development and tech.",
+        { 
+            title: "Learn Platform", 
+            desc: "Educational resource for web development and tech.", 
             link: "https://learn.abdullahtahir.me/",
+            img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop" 
         },
-        {
-            title: "Build Hub",
-            description: "Project staging and development showcase.",
+        { 
+            title: "Build Hub", 
+            desc: "Project staging and development showcase.", 
             link: "https://build.abdullahtahir.me/",
+            img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop" 
         },
-        {
-            title: "ACR System",
-            description: "Advanced reporting and management tool.",
+        { 
+            title: "ACR System", 
+            desc: "Advanced reporting and management tool.", 
             link: "https://acr.abdullahtahir.me/",
+            img: "http://googleusercontent.com/image_collection/image_retrieval/12818289728473755816_0" 
         },
-        {
-            title: "SMZ Enterprises",
-            description: "Enterprise-level business solution and dashboard.",
+        { 
+            title: "SMZ Enterprises", 
+            desc: "Enterprise-level business solution and dashboard.", 
             link: "https://smzenterprises.abdullahtahir.me/",
+            img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" 
         },
-        {
-            title: "InkByHand",
-            description: "Artistic stationery e-commerce platform.",
+        { 
+            title: "InkByHand", 
+            desc: "Artistic stationery e-commerce platform.", 
             link: "https://inkbyhand.store/",
+            img: "http://googleusercontent.com/image_collection/image_retrieval/11276686906117247435_0" 
         },
-        {
-            title: "JaveHandmade Store",
-            description: "Premium handcrafted goods marketplace.",
+        { 
+            title: "JaveHandmade Store", 
+            desc: "Premium handcrafted goods marketplace.", 
             link: "https://www.javehandmade.store/",
+            img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2000&auto=format&fit=crop" 
         },
-        {
-            title: "SocialControl",
-            description: "Unified social media command center.",
+        { 
+            title: "SocialControl", 
+            desc: "Unified social media command center.", 
             link: "https://socialcontrol.abdullahtahir.me/",
+            img: "http://googleusercontent.com/image_collection/image_retrieval/4017746997089476702_0" 
         },
-        {
-            title: "GitHub Profile",
-            description: "Open source contributions and repositories.",
+        { 
+            title: "GitHub Profile", 
+            desc: "Open source contributions and repositories.", 
             link: "https://github.com/abdullahtahir001100",
+            img: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=2088&auto=format&fit=crop" 
         },
     ];
 
+    const scroll = (direction: "left" | "right") => {
+        if (scrollRef.current) {
+            const { scrollLeft, clientWidth } = scrollRef.current;
+            const scrollTo = direction === "left" ? scrollLeft - clientWidth : scrollLeft + clientWidth;
+            scrollRef.current.scrollTo({ left: scrollTo, behavior: "smooth" });
+        }
+    };
+
     return (
         <Section title="Projects">
-            {/* Carousel Container */}
-            <div className="flex overflow-x-auto gap-4 pb-4 no-scrollbar scroll-smooth">
-                {projects.map((project) => (
-                    <a
-                        key={project.title}
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="min-w-[300px] border border-gray-300 bg-white transition-colors hover:bg-gray-50 flex flex-col"
+            <div style={{ position: "relative", width: "100%" }}>
+                <div style={{ display: "flex", justifyContent: "flex-end", gap: "10px", marginBottom: "15px" }}>
+                    <button 
+                        onClick={() => scroll("left")}
+                        style={{ padding: "8px", border: "1px solid #e5e7eb", background: "#fff", cursor: "pointer" }}
                     >
-                        {/* Placeholder SVG - Sharp Edges */}
-                        <div className="bg-gray-100 h-40 flex items-center justify-center border-b border-gray-300">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="square" strokeLinejoin="miter" className="text-gray-400">
-                                <rect x="3" y="3" width="18" height="18" />
-                                <path d="M3 9h18M9 21V9" />
-                            </svg>
-                        </div>
-                        
-                        <div className="p-4">
-                            <h3 className="text-base font-bold uppercase tracking-tight">
-                                {project.title}
-                            </h3>
-                            <p className="text-sm text-gray-600 mt-2 leading-relaxed">
-                                {project.description}
-                            </p>
-                            <div className="mt-4 text-xs font-semibold text-blue-600 uppercase">
-                                View Project &rarr;
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2"><path d="M15 18l-6-6 6-6" /></svg>
+                    </button>
+                    <button 
+                        onClick={() => scroll("right")}
+                        style={{ padding: "8px", border: "1px solid #e5e7eb", background: "#fff", cursor: "pointer" }}
+                    >
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2"><path d="M9 18l6-6-6-6" /></svg>
+                    </button>
+                </div>
+
+                <div 
+                    ref={scrollRef}
+                    style={{
+                        display: "flex",
+                        overflowX: "auto",
+                        gap: "20px",
+                        scrollSnapType: "x mandatory",
+                        msOverflowStyle: "none",
+                        scrollbarWidth: "none",
+                        WebkitOverflowScrolling: "touch",
+                    }}
+                >
+                    {projects.map((project, index) => (
+                        <a
+                            key={index}
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                minWidth: "320px",
+                                flexShrink: 0,
+                                border: "1px solid #e5e7eb",
+                                textDecoration: "none",
+                                color: "inherit",
+                                scrollSnapAlign: "start",
+                                display: "block",
+                                backgroundColor: "#fff"
+                            }}
+                        >
+                            <img 
+                                src={project.img} 
+                                alt={project.title}
+                                style={{
+                                    width: "100%",
+                                    height: "180px",
+                                    objectFit: "cover",
+                                    borderBottom: "1px solid #e5e7eb",
+                                    display: "block"
+                                }}
+                            />
+
+                            <div style={{ padding: "20px" }}>
+                                <h3 style={{ fontSize: "1rem", fontWeight: "700", textTransform: "uppercase", margin: 0 }}>
+                                    {project.title}
+                                </h3>
+                                <p style={{ fontSize: "0.875rem", color: "#6b7280", marginTop: "8px", lineHeight: "1.5" }}>
+                                    {project.desc}
+                                </p>
                             </div>
-                        </div>
-                    </a>
-                ))}
+                        </a>
+                    ))}
+                </div>
             </div>
         </Section>
     );
